@@ -149,10 +149,6 @@ list.addEventListener('click', e => {
           `;
             inputEditName.removeAttribute('readonly');
             inputEditNumber.removeAttribute('readonly');
-            //1. Agregar eventos a los inputs
-            //2. Agregar Regex a cada input
-            //3. Test regex (.test)
-            //4. correr la
 
             const editValidation = (validation, input) => {
                 if (editNameValidation && editNumberValidation) {
@@ -162,7 +158,7 @@ list.addEventListener('click', e => {
                 }
                 if (input.value === '') {
                     input.classList.remove('correct');
-                    input.classList.remove('invalid');
+                    input.classList.add('invalid');
                     editBtn.disabled = true;
                 } else if (validation) {
                     input.classList.add('correct');
@@ -171,6 +167,12 @@ list.addEventListener('click', e => {
                 } else {
                     input.classList.remove('correct');
                     input.classList.add('invalid');
+                    editBtn.disabled = true;
+                }
+
+                const NAME_REGEX = /^[A-Z][a-z ]*[A-Z][a-z]*$/;
+                const NUMBER_REGEX = /^(0212|0412|0414|0416|0424|0426)[0-9]{7}$/;
+                if (!NAME_REGEX.test(inputEditName.value) || !NUMBER_REGEX.test(inputEditNumber.value)) {
                     editBtn.disabled = true;
                 }
             }
@@ -197,5 +199,3 @@ list.addEventListener('click', e => {
     contacts = JSON.parse(contactStorage);
     renderContacts();
 })();
-
-

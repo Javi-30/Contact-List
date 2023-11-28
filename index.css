@@ -144,7 +144,6 @@ body {
     border: 1px solid green;
 }
 
-/* recordar ponerle display none y luego ponerselo con @media */
 .edit-btn:hover {
     color: inherit;
     background-color: green;
@@ -173,7 +172,6 @@ body {
     transition: all 0.175s ease-in-out;
 }
 
-/* recordar ponerle display none y luego ponerselo con @media */
 .delete-btn:hover {
     background-color: red;
     transition: all 0.175s ease-in-out;
@@ -215,13 +213,6 @@ body {
     font-weight: bold;
     padding: 0.1rem;
 }
-
-
-/* Para tablet 
-
-justify-content: space-between;
-align-items: center;
-display: flex; */
 
 @media (min-width: 768px) {
     #list {
